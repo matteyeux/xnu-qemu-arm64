@@ -338,7 +338,7 @@ static void n66_set_ramdisk_filename(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->ramdisk_filename, value, sizeof(nms->ramdisk_filename));
+    memcpy(nms->ramdisk_filename, value, sizeof(nms->ramdisk_filename));
 }
 
 static char *n66_get_ramdisk_filename(Object *obj, Error **errp)
@@ -352,7 +352,7 @@ static void n66_set_kernel_filename(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->kernel_filename, value, sizeof(nms->kernel_filename));
+    memcpy(nms->kernel_filename, value, sizeof(nms->kernel_filename));
 }
 
 static char *n66_get_kernel_filename(Object *obj, Error **errp)
@@ -366,7 +366,7 @@ static void n66_set_secmon_filename(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->secmon_filename, value, sizeof(nms->secmon_filename));
+    memcpy(nms->secmon_filename, value, sizeof(nms->secmon_filename));
 }
 
 static char *n66_get_secmon_filename(Object *obj, Error **errp)
@@ -380,7 +380,7 @@ static void n66_set_dtb_filename(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->dtb_filename, value, sizeof(nms->dtb_filename));
+    memcpy(nms->dtb_filename, value, sizeof(nms->dtb_filename));
 }
 
 static char *n66_get_dtb_filename(Object *obj, Error **errp)
@@ -394,7 +394,7 @@ static void n66_set_tc_filename(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->tc_filename, value, sizeof(nms->tc_filename));
+    memcpy(nms->tc_filename, value, sizeof(nms->tc_filename));
 }
 
 static char *n66_get_tc_filename(Object *obj, Error **errp)
@@ -408,7 +408,7 @@ static void n66_set_kern_args(Object *obj, const char *value,
 {
     N66MachineState *nms = N66_MACHINE(obj);
 
-    strlcpy(nms->kern_args, value, sizeof(nms->kern_args));
+    memcpy(nms->kern_args, value, sizeof(nms->kern_args));
 }
 
 static char *n66_get_kern_args(Object *obj, Error **errp)

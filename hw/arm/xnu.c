@@ -205,7 +205,7 @@ void macho_setup_bootargs(char *name, uint64_t mem_size, AddressSpace *as,
     boot_args.deviceTreeLength = dtb_size;
     boot_args.memSizeActual = mem_size;
     if (kern_args) {
-        strlcpy(boot_args.CommandLine, kern_args,
+        memcpy(boot_args.CommandLine, kern_args,
                 sizeof(boot_args.CommandLine));
     }
 
